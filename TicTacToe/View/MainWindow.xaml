@@ -18,20 +18,22 @@
     <Window.DataContext>
         <vm:GameViewModel x:Name="viewModel" />
     </Window.DataContext>
-    
-    <Grid>
 
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400*"/>
                 <ColumnDefinition Width="200*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock FontSize="50" Margin="70 2 0 2" FontFamily="Verdana" Text="{Binding playerTurn, Mode=OneWay}" />
+            
+            <TextBlock FontSize="50" Margin="70 2 0 2" FontFamily="Verdana"
+                       Text="{Binding playerTurn, Mode=OneWay}" />
+            
             <Button x:Name="button_new_game" Content="New game"
                     Grid.Row="0" Grid.Column="1" Margin="25 20 20 20"
                     FontSize="15" Command="{Binding newGame}"/>
@@ -50,42 +52,50 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="button_y0_x0" Grid.Column="0" Grid.Row="0"
+            <Button Name="button_y0_x0" Grid.Column="0" Grid.Row="0"
                     Content="{Binding fields[0], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="0"/>
-            
-            <Button x:Name="button_y0_x1" Grid.Column="1" Grid.Row="0"
-                    Content="{Binding fields[1], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="1"/>
-            
-            <Button x:Name="button_y0_x2" Grid.Column="2" Grid.Row="0"
-                    Content="{Binding fields[2], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="2"/>
-            
-            <Button x:Name="button_y1_x0" Grid.Column="0" Grid.Row="1"
-                    Content="{Binding fields[3], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="3"/>
-            
-            <Button x:Name="button_y1_x1" Grid.Column="1" Grid.Row="1"
-                    Content="{Binding fields[4], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="4"/>
-            
-            <Button x:Name="button_y1_x2" Grid.Column="2" Grid.Row="1"
-                    Content="{Binding fields[5], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="5"/>
-            
-            <Button x:Name="button_y2_x0" Grid.Column="0" Grid.Row="2"
-                    Content="{Binding fields[6], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="6"/>
-            
-            <Button x:Name="button_y2_x1" Grid.Column="1" Grid.Row="2" 
-                    Content="{Binding fields[7], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="7"/>
-            
-            <Button x:Name="button_y2_x2" Grid.Column="2" Grid.Row="2"
-                    Content="{Binding fields[8], Mode=OneWay}"
-                    Command="{Binding fieldClick}" CommandParameter="8"/>
-        </Grid>
+                    Command="{Binding fieldClick_0_0}"
+                    IsEnabled="{Binding buttonUse[0], Mode=OneWay}"/>
 
+            <Button Name="button_y0_x1" Grid.Column="1" Grid.Row="0"
+                    Content="{Binding fields[1], Mode=OneWay}"
+                    Command="{Binding fieldClick_1_0}"
+                    IsEnabled="{Binding buttonUse[1], Mode=OneWay}"/>
+
+            <Button Name="button_y0_x2" Grid.Column="2" Grid.Row="0"
+                    Content="{Binding fields[2], Mode=OneWay}"
+                    Command="{Binding fieldClick_2_0}"
+                    IsEnabled="{Binding buttonUse[2], Mode=OneWay}"/>
+
+            <Button Name="button_y1_x0" Grid.Column="0" Grid.Row="1"
+                    Content="{Binding fields[3], Mode=OneWay}"
+                    Command="{Binding fieldClick_0_1}"
+                    IsEnabled="{Binding buttonUse[3], Mode=OneWay}"/>
+
+            <Button Name="button_y1_x1" Grid.Column="1" Grid.Row="1"
+                    Content="{Binding fields[4], Mode=OneWay}"
+                    Command="{Binding fieldClick_1_1}"
+                    IsEnabled="{Binding buttonUse[4], Mode=OneWay}"/>
+
+            <Button Name="button_y1_x2" Grid.Column="2" Grid.Row="1"
+                    Content="{Binding fields[5], Mode=OneWay}"
+                    Command="{Binding fieldClick_2_1}"
+                    IsEnabled="{Binding buttonUse[5], Mode=OneWay}"/>
+
+            <Button Name="button_y2_x0" Grid.Column="0" Grid.Row="2"
+                    Content="{Binding fields[6], Mode=OneWay}"
+                    Command="{Binding fieldClick_0_2}"
+                    IsEnabled="{Binding buttonUse[6], Mode=OneWay}"/>
+
+            <Button Name="button_y2_x1" Grid.Column="1" Grid.Row="2" 
+                    Content="{Binding fields[7], Mode=OneWay}"
+                    Command="{Binding fieldClick_1_2}"
+                    IsEnabled="{Binding buttonUse[7], Mode=OneWay}"/>
+
+            <Button Name="button_y2_x2" Grid.Column="2" Grid.Row="2"
+                    Content="{Binding fields[8], Mode=OneWay}"
+                    Command="{Binding fieldClick_2_2}"
+                    IsEnabled="{Binding buttonUse[8], Mode=OneWay}"/>
+        </Grid>
     </Grid>
 </Window>
